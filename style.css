@@ -31,6 +31,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
 }
 
 .logo-container {
@@ -123,6 +124,7 @@ fieldset {
 legend {
     font-size: 1.5rem;
     font-weight: 400;
+    margin-bottom: 20px;
 }
 
 .form-row {
@@ -133,7 +135,7 @@ legend {
     font-size: 1.25rem;
 }
 
-.form-row input[type='text'] {
+.form-row input {
     background-color: #FFFFFF;
     border: 1px solid #D6D9DC;
     border-radius: 3px;
@@ -142,11 +144,22 @@ legend {
     font-size: 1rem;
 }
 
+.form-row input:invalid:not(:focus):not(:placeholder-shown) {
+    background-color: rgba(255, 214, 221, 0.63);
+}
+
+.form-row input:valid {
+    background-image: url(img/done_black_24dp.svg);
+    background-size: 5%;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+}
+
 .form-formatting {
     display: flex;
     flex-wrap: wrap;
 
-    margin-top: ;
+    margin-top: 20px;
 }
 
 
