@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 :root {
-    --right-container-padding: 10vh 4vw;
+    --right-container-padding: 5vh 4vw;
     --header-text-color: rgba(30,64,175);
     --button-hover-color: rgb(60, 88, 180);
 }
@@ -203,4 +203,37 @@ legend {
     color: var(--header-text-color);
     text-decoration: underline;
     font-weight: 700;
+}
+
+
+@media only screen and (max-width: 1543px) {
+
+    .form-row input {
+        
+        width: 30ch;
+        
+    }
+    
+}
+
+@media only screen and (max-width: 1217px) {
+
+    .form-row input {
+        
+        width: 100%;
+        
+    }
+    
+}
+
+
+
+@media only screen and (max-height: 768px) {
+
+    legend {
+        
+        margin-bottom: 0;
+        
+    }
+ 
 }
