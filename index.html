@@ -7,7 +7,7 @@
     <title>Sign Up! | TheOdinProject</title>
     <link rel="stylesheet" href="./css/node_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="main-container">
@@ -53,11 +53,12 @@
                                     </div>
                                     <div class="form-row">
                                         <label for="password">Password</label>
-                                        <input type="password" id="password" name="password" placeholder=" " required>
+                                        <input type="password" id="password" name="password" placeholder=" " class="pw1" minlength=8 required>
                                     </div>
-                                    <div class="form-row">
+                                    <div class="form-row" id="confirm">
                                         <label for="password-confirm">Confirm Password</label>
-                                        <input type="password" id="password-confirm" name="password-confirm" placeholder=" " required>
+                                        <input type="password" id="password-confirm" name="password-confirm" placeholder=" " class="pw2" required>
+                                        <p class="error"></p>
                                     </div>
                                     </div>
                             </fieldset>
@@ -67,7 +68,7 @@
                 
                 <div class="bottom-right-container">
                     <button type="submit" form="contact-details-form">Submit</button>
-                    <p>Forgot password?</p>
+                    <p>Already a member? <a>Log In</a></p>
                 </div>
             </div>
         </main>

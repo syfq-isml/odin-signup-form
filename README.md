@@ -3,4 +3,6 @@
 # Future Implementations
 - [ ] add validation on phone number (no alphabets)
 - [ ] add validation on names (no numbers)
-- [ ] add validation on password (min. chars)
+- [ ] add visual validation on password (min. chars)
+- [ ] fix password matching error message (should disappear after a filed is removed)
+- [ ] add browser resolution compatibility (media queries)

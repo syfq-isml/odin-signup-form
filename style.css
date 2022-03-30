@@ -3,6 +3,7 @@
 :root {
     --right-container-padding: 10vh 4vw;
     --header-text-color: rgba(30,64,175);
+    --button-hover-color: rgb(60, 88, 180);
 }
 
 body {
@@ -108,6 +109,7 @@ p {
 .bottom-right-container {
     padding: var(--right-container-padding);
     padding-top: 30px;
+    padding-bottom: 0;
 }
 
 form,
@@ -148,11 +150,23 @@ legend {
     background-color: rgba(255, 214, 221, 0.63);
 }
 
-.form-row input:valid {
+.form-row input:not(:focus):not(:placeholder-shown):valid:not(input[type='password']) {
     background-image: url(img/done_black_24dp.svg);
     background-size: 5%;
     background-repeat: no-repeat;
     background-position: 98% 50%;
+}
+
+.password-matched {
+    background-image: url(img/done_black_24dp.svg);
+    background-size: 5%;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+}
+
+.form-row .error {
+    color: rgb(211, 9, 9);
+    font-size: 0.8rem;
 }
 
 .form-formatting {
@@ -162,5 +176,31 @@ legend {
     margin-top: 20px;
 }
 
+.bottom-right-container > button {
+    background-color: var(--button-hover-color);
+    border: 0;
+    border-radius: 12px;
+    height: 5rem;
+    width: 15ch;
+    padding: 12px 20px;
+    color:aliceblue;
+    font-size: 2rem;
+    font-weight: 600;
+    box-shadow: 0 10px rgb(20, 42, 116);
+}
 
+.bottom-right-container > button:hover {
+    background-color: var(--header-text-color);
+}
 
+.bottom-right-container p {
+    font-size: 1rem;
+    margin-top: 20px;
+
+}
+
+.bottom-right-container a {
+    color: var(--header-text-color);
+    text-decoration: underline;
+    font-weight: 700;
+}
