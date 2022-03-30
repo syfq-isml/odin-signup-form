@@ -18,6 +18,11 @@ if (lastPasswordBox.value === '' || firstPasswordBox.value === '') return;
     }
 }
 
+// function releaseSecondBox() {
+//     if (firstPasswordBox.checkValidity() === true) 
+//         lastPasswordBox.disable = false;
+// }
+
 
 // function checkIfEmpty {
 //     if (lastPasswordBox.value == null || firstPasswordBox.value == null) {
@@ -33,5 +38,12 @@ const lastPasswordBox = document.querySelector('.pw2');
 const firstPasswordBox = document.querySelector('.pw1');
 const p = document.querySelector('.error');
 
+// lastPasswordBox.disabled = true;
+
+// firstPasswordBox.addEventListener("click", releaseSecondBox);
+
 lastPasswordBox.addEventListener("blur", checkMatchingPasswords);
 // firstPasswordBox.addEventListener("blur", checkIfEmpty)
+
+
+
