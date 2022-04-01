@@ -1,10 +1,17 @@
 function checkMatchingPasswords() {
     // checkIfEmpty();
-if (lastPasswordBox.value === '' || firstPasswordBox.value === '') return;
+
+
+if (lastPasswordBox.value === '' && lastPasswordBox.classList.contains('password-matched')) {
+    lastPasswordBox.classList.remove('password-matched');
+    return;
+}
+
+if (lastPasswordBox.value === '' && firstPasswordBox.value === '') return;
 
     if (lastPasswordBox.value === firstPasswordBox.value) {
         p.innerHTML = '';
-        if (lastPasswordBox.classList.contains('password-matched') || firstPasswordBox.classList.contains('password-matched')) return;
+        if (lastPasswordBox.classList.contains('password-matched')) return ;
         lastPasswordBox.classList.add('password-matched');
         lastPasswordBox.style.backgroundColor = '#FFFFFF';
         firstPasswordBox.classList.add('password-matched');
@@ -18,10 +25,24 @@ if (lastPasswordBox.value === '' || firstPasswordBox.value === '') return;
     }
 }
 
-// function releaseSecondBox() {
-//     if (firstPasswordBox.checkValidity() === true) 
-//         lastPasswordBox.disable = false;
-// }
+function releaseSecondBox() {
+
+    if (firstPasswordBox.value === '' && firstPasswordBox.classList.contains('password-matched')) {
+        firstPasswordBox.classList.remove('password-matched');
+        return;
+    }
+
+    if (firstPasswordBox.checkValidity() === true) {
+        lastPasswordBox.removeAttribute('disabled'); 
+        firstPasswordBox.classList.add('password-matched');
+        lastPasswordBox.style.backgroundColor = '#FFFFFF';
+    } else {
+        lastPasswordBox.setAttribute('disabled','true');
+        firstPasswordBox.classList.remove('password-matched');
+        lastPasswordBox.classList.remove('password-matched');
+        lastPasswordBox.style.backgroundColor = '#dcdee2';
+    }
+}
 
 
 // function checkIfEmpty {
@@ -38,12 +59,11 @@ const lastPasswordBox = document.querySelector('.pw2');
 const firstPasswordBox = document.querySelector('.pw1');
 const p = document.querySelector('.error');
 
-// lastPasswordBox.disabled = true;
 
-// firstPasswordBox.addEventListener("click", releaseSecondBox);
+firstPasswordBox.addEventListener("blur", releaseSecondBox);
 
 lastPasswordBox.addEventListener("blur", checkMatchingPasswords);
-// firstPasswordBox.addEventListener("blur", checkIfEmpty)
+
 
 
 

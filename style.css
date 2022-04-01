@@ -168,6 +168,7 @@ legend {
     background-size: 5%;
     background-repeat: no-repeat;
     background-position: 98% 50%;
+    
 }
 
 .form-row .error,
@@ -180,7 +181,7 @@ legend {
     display:none;
 }
 
-input:disabled {
+input[disabled="true"] {
     background-color: #dcdee2;
 }
 
